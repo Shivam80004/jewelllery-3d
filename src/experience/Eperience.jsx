@@ -22,26 +22,29 @@ export default function Experience() {
     const pos = new THREE.Vector3();
     const target = new THREE.Vector3();
 
+    const isMobile = window.innerWidth < 768;
+    const mobileYOffset = isMobile ? -1.5 : 0;
+
     switch (step) {
       case 1: // The Architecture (Wide/Hero)
         pos.set(0, 3, 9);
-        target.set(0, 0, 0);
+        target.set(0, 0 + mobileYOffset, 0);
         break;
       case 2: // The Core (Pearl close up)
         pos.set(0, 5, 3);
-        target.set(0, 1, 0);
+        target.set(0, 1 + mobileYOffset, 0);
         break;
       case 3: // The Band (Angle showcasing texture)
         pos.set(4, 2, 5);
-        target.set(0, 0, 0);
+        target.set(0, 0 + mobileYOffset, 0);
         break;
       case 4: // The Mark (Inner ring engraving view)
         pos.set(0, 5, 3);
-        target.set(0, 1, 0);
+        target.set(0, 1 + mobileYOffset, 0);
         break;
       default:
         pos.set(0, 2, 8);
-        target.set(0, 0, 0);
+        target.set(0, 0 + mobileYOffset, 0);
         break;
     }
 
