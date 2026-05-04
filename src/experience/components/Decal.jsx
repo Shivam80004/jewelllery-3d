@@ -62,6 +62,11 @@ const CreateDecal = (mesh, texture) => {
     polygonOffsetFactor: -1, // Prevents z-fighting
   });
 
+  decalGeometry.computeBoundingBox();
+  if (!decalGeometry.boundingBox) decalGeometry.boundingBox = new THREE.Box3();
+  decalGeometry.computeBoundingSphere();
+  if (!decalGeometry.boundingSphere) decalGeometry.boundingSphere = new THREE.Sphere();
+
   const decalMesh = new THREE.Mesh(decalGeometry, decalMaterial);
   decalMesh.name = "Decal";
 

@@ -8,13 +8,16 @@ export default function ThreeCanvas({
 }) {
   return (
     <Canvas
+      gl={{ preserveDrawingBuffer: true }}
       camera={{
         fov: 45,
         near: 0.1,
         far: 200,
-        position: [5, 5, 5],
+        position: [5, 5, 5]
       }}>
-      <Experience />
+      <React.Suspense fallback={null}>
+        <Experience />
+      </React.Suspense>
     </Canvas>
   );
 }

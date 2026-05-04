@@ -1,21 +1,21 @@
 
 import { useGLTF } from "@react-three/drei";
-import  GoldMaterial  from "../materials/Gold"; // Custom hook
+import GoldMaterial from "../materials/Gold"; // Custom hook
 import CreateDecal from "./Decal";
 import { useRingConfigurator } from "../../store/useRingConfigurator";
 import { Stage } from "@react-three/drei";
-import  PearlMaterial  from "../materials/Pearl"; // Regular function
+import PearlMaterial from "../materials/Pearl"; // Regular function
 import { useFrame } from "@react-three/fiber";
-import { useRef, useEffect, useState,useMemo } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import createTextTexture from "../materials/Text";
 import * as THREE from "three";
 
 
 export default function Ring() {
-  const { config} = useRingConfigurator();
+  const { config } = useRingConfigurator();
   const ringMeshRef = useRef();
   const pearlMeshRef = useRef();
- const [decalMesh, setDecalMesh] = useState(null);
+  const [decalMesh, setDecalMesh] = useState(null);
   const text = useMemo(() => {
     return createTextTexture(
       config.textConfig.text,
@@ -25,7 +25,7 @@ export default function Ring() {
     );
   }, [config.textConfig.text, config.textConfig.fontFamily]);
 
-  
+
 
   const { scene } = useGLTF(
     config.model === "withPearl"
@@ -59,9 +59,9 @@ export default function Ring() {
 
     if (pearlMesh) pearlMesh.material = pearlMaterial;
 
-    
-   
-  }, [text, goldMaterial, pearlMaterial,scene]);
+
+
+  }, [text, goldMaterial, pearlMaterial, scene]);
 
   useFrame((state, delta) => {
     const elapsedTime = state.clock.elapsedTime;
@@ -90,7 +90,7 @@ export default function Ring() {
         />
         {decalMesh && (
           <primitive
-            
+
             renderOrder={1}
             scale={[1, 1, 1]}
             position={[0, 0, 0]}

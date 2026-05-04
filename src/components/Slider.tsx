@@ -21,7 +21,7 @@ export default function Slider({
   ...props
 }: ListProps): JSX.Element {
   return (
-    <div {...props} className={`relative  w-fit h-fit space-y-4  ${style}`}>
+    <div {...props} className={`relative w-fit h-fit space-y-4 ${className} ${style || ''}`}>
       <h3 className="leading-none font-medium text-black">{label}</h3>
       <div className="flex flex-row gap-4 justify-center items-center flex-wrap ">
         <input

@@ -1,23 +1,29 @@
-
 import Canvas from './experience/Canvas.jsx'
-import PaginationUI from './components/PaginationUI.js';
-import Loader from './components/Loader.js';
+import HUD from './components/HUD.tsx';
+import Loader from './components/Loader.tsx';
+import { useRingConfigurator } from './store/useRingConfigurator';
 
 export default function App() {
+  const { isLoaded } = useRingConfigurator();
 
   return (
-    <>
-      <section className="w-full h-full min-h-fit flex md:flex-row flex-col  ">
-        <Loader>
-          {" "}
-          <Canvas />
-        </Loader>
-        <div className="md:w-[45vw] min-h-fit w-full md:h-full h-[50vh] flex flex-col justify-center items-center">
-          <PaginationUI />
+    <main className="w-screen h-screen overflow-hidden relative bg-obsidian">
+      {/* 3D Canvas Layer - Absolute Background */}
+      <div className="absolute inset-0 z-0">
+        <Canvas />
+      </div>
+
+      {/* Loading Overlay */}
+      {!isLoaded && (
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-obsidian">
+          <Loader />
         </div>
-      </section>
-    </>
+      )}
+
+      {/* Floating HUD Layer - Interactive Foreground */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <HUD />
+      </div>
+    </main>
   );
 }
-
-

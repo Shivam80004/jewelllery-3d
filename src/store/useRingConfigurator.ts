@@ -26,9 +26,13 @@ export interface RingConfig {
 interface RingConfiguratorState {
   config: RingConfig;
   textureLoading: boolean;
+  isLoaded: boolean;
+  step: number;
   setConfig: (newConfig: Partial<RingConfig>) => void;
   setTextureLoading: (newState: boolean) => void;
   setTextConfig: (newTextConfig: Partial<RingConfig>) => void;
+  setLoaded: (isLoaded: boolean) => void;
+  setStep: (step: number) => void;
 }
 
 export const useRingConfigurator = create<RingConfiguratorState>()(
@@ -45,6 +49,11 @@ export const useRingConfigurator = create<RingConfiguratorState>()(
       },
     },
     textureLoading: false,
+    isLoaded: false,
+    step: 1,
+
+    setLoaded: (isLoaded) => set({ isLoaded }),
+    setStep: (step) => set({ step }),
 
     setConfig: (newConfig) =>
       set((state) => {
