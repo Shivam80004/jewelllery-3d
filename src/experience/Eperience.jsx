@@ -6,6 +6,7 @@ import { BlendFunction } from "postprocessing";
 import gsap from "gsap";
 import * as THREE from "three";
 import Ring from "./components/Ring";
+import ModelTransition from "./components/ModelTransition";
 import { useRingConfigurator } from "../store/useRingConfigurator";
 
 export default function Experience() {
@@ -96,6 +97,9 @@ export default function Experience() {
 
       {/* The Jewelry */}
       <Ring />
+
+      {/* Liquid-gold shader dissolve on model switch */}
+      <ModelTransition />
 
       {/* Realistic Shadow Catcher */}
       <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={20} blur={2.5} far={4} />
