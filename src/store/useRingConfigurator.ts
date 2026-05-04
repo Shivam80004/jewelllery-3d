@@ -9,7 +9,7 @@ export type Material = "gold" | "whiteGold" | "roseGold";
 export type PearlColor = "white" | "pink" | "blue";
 export type TextureType = "polished" | "brushed" | "hammered";
 export type TextureScale = number;
-export type FontFamily = "cursive" | "serif" | "sans-serif" | "monospace" | "fantasy"
+export type FontFamily = "cursive" | "serif" | "sans-sans" | "monospace" | "fantasy"
 
 export interface RingConfig {
   model: RingModel;
@@ -17,7 +17,7 @@ export interface RingConfig {
   pearlColor?: PearlColor;
   textureType?: TextureType;
   textureScale?: TextureScale;
-  textConfig:{
+  textConfig: {
     text: string;
     fontFamily: FontFamily;
   }

@@ -101,12 +101,12 @@ export default function Experience() {
       <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={20} blur={2.5} far={4} />
 
       {/* Cinematic Post-Processing (Ensure fallback to disable crash) */}
-      <EffectComposer multisampling={4} disableNormalPass>
+      <EffectComposer multisampling={8} disableNormalPass>
         <Bloom
-          luminanceThreshold={0.5}
-          luminanceSmoothing={0.9}
-          intensity={0.6}
-          mipmapBlur
+          luminanceThreshold={0.85}
+          luminanceSmoothing={0.3}
+          intensity={0.25}
+          levels={5}
         />
         {/* <ChromaticAberration
           blendFunction={BlendFunction.NORMAL}

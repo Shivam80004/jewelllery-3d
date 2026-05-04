@@ -34,7 +34,7 @@ const HUD: React.FC = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="pointer-events-auto"
         >
-          <h1 className="font-serif text-2xl md:text-3xl tracking-widest text-gold drop-shadow-md">AURA</h1>
+          <h1 className="font-sans text-2xl md:text-3xl tracking-widest text-gold drop-shadow-md">AURA</h1>
           <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/50 mt-1">High Jewellery</p>
         </motion.div>
 
@@ -62,7 +62,7 @@ const HUD: React.FC = () => {
           >
             <div className="mb-2 md:mb-4">
               <span className="text-gold text-[10px] md:text-sm tracking-[0.2em] uppercase mb-1 md:mb-2 block">Phase {step}</span>
-              <h2 className="font-serif text-3xl md:text-5xl font-light leading-tight mb-1 md:mb-2">{steps[step - 1].name}</h2>
+              <h2 className="font-sans text-3xl md:text-4xl font-light leading-tight mb-1 md:mb-2">{steps[step - 1].name}</h2>
               <p className="text-white/60 font-light text-xs md:text-sm tracking-wide leading-relaxed">
                 {steps[step - 1].description}
               </p>
@@ -86,7 +86,7 @@ const HUD: React.FC = () => {
                     )}
                     <div className="relative z-10 flex justify-between items-center">
                       <div>
-                        <h3 className="font-serif text-lg md:text-xl mb-1">{item.label}</h3>
+                        <h3 className="font-sans text-lg md:text-xl mb-1">{item.label}</h3>
                         <p className="text-[10px] md:text-xs text-white/50">{item.desc}</p>
                       </div>
                       <div className={`w-4 h-4 rounded-full border flex items-center justify-center transition-colors ${config.model === item.id ? 'border-gold' : 'border-white/20'}`}>
@@ -187,7 +187,7 @@ const HUD: React.FC = () => {
                     placeholder="Enter your legacy..."
                     value={config.textConfig.text}
                     onChange={(e) => setTextConfig({ text: e.target.value })}
-                    className="w-full bg-transparent border-b border-white/20 pb-3 md:pb-4 text-xl md:text-2xl font-serif text-white focus:outline-none focus:border-gold transition-colors placeholder:text-white/20"
+                    className="w-full bg-transparent border-b border-white/20 pb-3 md:pb-4 text-xl md:text-2xl font-sans text-white focus:outline-none focus:border-gold transition-colors placeholder:text-white/20"
                   />
                   <span className="absolute right-0 bottom-3 md:bottom-4 text-[10px] md:text-xs text-white/40">{config.textConfig.text.length}/15</span>
                 </div>
@@ -195,7 +195,7 @@ const HUD: React.FC = () => {
                 <div>
                   <h3 className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/60 mb-3 md:mb-4">Typography</h3>
                   <div className="flex gap-2 md:gap-3">
-                    {['serif', 'sans-serif', 'cursive'].map((font) => (
+                    {['serif', 'sans-sans', 'cursive'].map((font) => (
                       <button
                         key={font}
                         onClick={() => setTextConfig({ fontFamily: font as FontFamily })}
