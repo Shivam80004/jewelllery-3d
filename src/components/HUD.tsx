@@ -24,7 +24,7 @@ const HUD: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full pointer-events-none flex flex-col justify-between p-6 md:p-12 text-white font-sans overflow-hidden">
+    <div className="w-full h-full pointer-events-none flex flex-col justify-between p-4 md:p-12 text-white font-sans overflow-hidden touch-auto">
 
       {/* Top Header */}
       <header className="flex justify-between items-center w-full">
@@ -58,7 +58,7 @@ const HUD: React.FC = () => {
             animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
             exit={{ opacity: 0, x: 30, filter: 'blur(10px)' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-0 md:bottom-auto md:left-0 md:top-1/2 md:-translate-y-1/2 pointer-events-auto w-full md:max-w-sm max-h-[60vh] overflow-y-auto no-scrollbar pb-4 md:pb-0"
+            className="absolute bottom-0 md:bottom-auto md:left-0 md:top-1/2 md:-translate-y-1/2 pointer-events-auto w-full md:max-w-sm max-h-[40vh] md:max-h-[60vh] overflow-y-auto no-scrollbar overscroll-contain touch-auto pb-4 md:pb-0"
           >
             <div className="mb-2 md:mb-4">
               <span className="text-gold text-[10px] md:text-sm tracking-[0.2em] uppercase mb-1 md:mb-2 block">Phase {step}</span>

@@ -13,6 +13,7 @@ export default function Experience() {
   const controlsRef = useRef();
   const { step, config } = useRingConfigurator();
   const { pointer, camera } = useThree();
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   // Handle cinematic camera path based on the current step
   useEffect(() => {
@@ -75,6 +76,8 @@ export default function Experience() {
         maxPolarAngle={Math.PI / 1.5}
         enablePan={false}
         enableZoom={false}
+        enableRotate={!isMobile}
+        touches={{ ONE: isMobile ? 0 : 1, TWO: 0 }}
       />
 
       {/* High-End Studio Lighting */}

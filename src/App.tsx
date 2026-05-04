@@ -7,7 +7,7 @@ export default function App() {
   const { isLoaded } = useRingConfigurator();
 
   return (
-    <main className="w-screen h-screen overflow-hidden relative bg-obsidian">
+    <main className="fixed inset-0 w-screen h-[100dvh] overflow-hidden bg-obsidian touch-none">
       {/* 3D Canvas Layer - Absolute Background */}
       <div className="absolute inset-0 z-0">
         <Canvas />
