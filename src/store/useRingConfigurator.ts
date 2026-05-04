@@ -30,7 +30,7 @@ interface RingConfiguratorState {
   step: number;
   setConfig: (newConfig: Partial<RingConfig>) => void;
   setTextureLoading: (newState: boolean) => void;
-  setTextConfig: (newTextConfig: Partial<RingConfig>) => void;
+  setTextConfig: (newTextConfig: Partial<RingConfig['textConfig']>) => void;
   setLoaded: (isLoaded: boolean) => void;
   setStep: (step: number) => void;
 }
