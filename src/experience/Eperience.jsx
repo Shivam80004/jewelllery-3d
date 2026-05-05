@@ -75,9 +75,10 @@ export default function Experience() {
         minPolarAngle={0}
         maxPolarAngle={Math.PI / 1.5}
         enablePan={false}
-        enableZoom={false}
-        enableRotate={!isMobile}
-        touches={{ ONE: isMobile ? 0 : 1, TWO: 0 }}
+        enableZoom={true}
+        enableRotate={true}
+        enableDamping={true}
+        dampingFactor={0.05}
       />
 
       {/* High-End Studio Lighting */}
